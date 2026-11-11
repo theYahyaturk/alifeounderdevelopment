@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Something Great Is Cooking! — Under Development</title>
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="shortcut icon" href="logo.svg" />
+  <link rel="alternate icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- 1. TOP SOLID DARK GREEN HEADER BAR -->
+  <div class="top-solid-green-bar"></div>
+
+  <!-- 2. NAVBAR (ALIFEO LOGO + JOIN WAITLIST BUTTON) -->
+  <header class="clean-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="Logo">
+        <img src="logo.svg" alt="Logo" class="alifeo-svg-logo" />
+      </a>
+
+      <div class="nav-right-actions">
+        <button class="btn-header-join" onclick="openWaitlistModal('general')">
+          Join Waitlist
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. MAIN HERO CONTENT AREA -->
+  <main class="hero-page-wrapper">
+    <div class="container hero-container">
+
+      <!-- STEP A: TICKET-CUT RIBBON -->
+      <div class="hero-ribbon-row">
+        <div class="ticket-ribbon-wrapper" id="ticketRibbon">
+          <div class="ticket-ribbon-body">
+
+            <div class="ribbon-left-items">
+              <div class="gift-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="10" width="18" height="11" rx="1.5" fill="white" />
+                  <rect x="2" y="6.5" width="20" height="4" rx="1" fill="white" />
+                  <rect x="10.5" y="6.5" width="3" height="14.5" fill="#f5b014" />
+                  <rect x="2" y="7.5" width="20" height="2" fill="#f5b014" />
+                  <path d="M12 6.5C10 3.5 6.5 3.5 6.5 5.5C6.5 7.5 10 6.5 12 6.5Z" fill="#f5b014" />
+                  <path d="M12 6.5C14 3.5 17.5 3.5 17.5 5.5C17.5 7.5 14 6.5 12 6.5Z" fill="#f5b014" />
+                </svg>
+              </div>
+
+              <div class="gold-chevrons">
+                <i class="fa-solid fa-chevron-up"></i>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+
+              <span class="ribbon-text-strong">USE CODE</span>
+              <div class="dashed-code-badge" id="promoCodeVal">FIRSTORDER</div>
+            </div>
+
+            <div class="ticket-punches">
+              <span class="punch-top"></span>
+              <span class="punch-bottom"></span>
+            </div>
+
+            <div class="ribbon-right-items">
+              <button type="button" class="btn-copy-ticket" id="copyTicketBtn" onclick="copyCouponCode('FIRSTORDER')">
+                <i class="fa-regular fa-copy"></i>
+                <span id="copyBtnLabel">Copy Code</span>
+              </button>
+              <div class="ribbon-divider"></div>
+              <button type="button" class="btn-dismiss-ticket" onclick="dismissRibbon()" title="Close">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP B: ANIMATED SEARCH BAR -->
+      <div class="hero-search-row">
+        <div class="animated-search-bar" id="animatedSearchBar" onclick="handleSearchBarClick()">
+          <i class="fa-solid fa-magnifying-glass search-leading-icon"></i>
+          <div class="search-text-container">
+            <span class="search-dynamic-text" id="typewriterText"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+          <div class="search-action-chip" id="searchActionChip">
+            <span id="chipLabel">Explore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP C: TWO AUTO-SCROLLING DARK GREEN TICKET BANNERS WITH DOTS -->
+      <div class="hero-ticket-carousel-row">
+        <div class="ticket-carousel-viewport" id="ticketCarouselViewport">
+
+          <!-- Slide 1: Under Development Banner -->
+          <div class="ticket-carousel-slide">
+            <div class="dark-green-ticket-card">
+              <div class="ticket-half-circle cut-left"></div>
+              <div class="ticket-half-circle cut-right"></div>
+
+              <div class="ticket-card-content">
+                <div class="under-dev-tag">
+                  UNDER DEVELOPMENT
+                </div>
+
+                <h1 class="ticket-card-title">
+                  We're cooking something <br />
+                  <span class="title-lime-accent">truly extraordinary.</span>
+                </h1>
+
+                <p class="ticket-card-desc">
+                  Currently under development. We're crafting a whole new way to shop, sell, and deliver across India.
+                </p>
+
+                <div class="ticket-notify-action" onclick="openWaitlistModal('general')">
+                  <span>Notify Me When Available &rarr;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Interactive Game Invite Banner -->
+          <div class="ticket-carousel-slide">
+            <div class="dark-green-ticket-card game-slide-card" onclick="openGameModal()">
+              <div class="ticket-half-circle cut-left"></div>
+              <div class="ticket-half-circle cut-right"></div>
+
+              <div class="ticket-card-content">
+                <div class="under-dev-tag game-tag">
+                  MINI BREAK
+                </div>
+
+                <h2 class="ticket-card-title">
+                  While we are cooking, <br />
+                  <span class="title-lime-accent">Play X / O Game!</span>
+                </h2>
+
+                <p class="ticket-card-desc">
+                  Challenge our AI bot in a classic game of Tic-Tac-Toe while we prepare something great.
+                </p>
+
+                <div class="ticket-play-action">
+                  <span>Tap to Play Now &rarr;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="carousel-dots-row" id="carouselDots">
+          <button class="carousel-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+          <button class="carousel-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+        </div>
+      </div>
+
+      <!-- STEP D: UPCOMING CATEGORIES (Transparent Background, Raw Images Only, 2 Rows, No Scrollbar) -->
+      <div class="hero-categories-row">
+        <div class="categories-header-mini">
+          <span>UPCOMING CATEGORIES</span>
+          <small>Swipe &rarr;</small>
+        </div>
+
+        <div class="categories-scroll-container">
+          <!-- Row 1 (Starting with Decor) -->
+          <div class="cat-track-row">
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/cat-decor.png" alt="Decor & Handicraft" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Decor</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1106 (1).png" alt="Medicines & Healthcare" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Medicines</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1107.png" alt="Electronics" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Electronics</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1108.png" alt="Clothes & Fashion" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Fashion</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1109 (1).png" alt="Personal Care & Beauty" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Beauty</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1109 (2).png" alt="Toys & Baby Product" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Toys & Baby</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1110.png" alt="Kitchen & Home" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Kitchen</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1116 (1).png" alt="Book Stationery & Office" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Stationery</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1116.png" alt="Industrial Hardware" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Hardware</span>
+            </div>
+          </div>
+
+          <!-- Row 2 (Starting with Grocery) -->
+          <div class="cat-track-row">
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/cat-grocery.png" alt="Daily Use & Grocery" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Grocery</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1117.png" alt="Pet Supplies" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Pet Care</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1118.png" alt="Garden & Agriculture" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Garden</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1119 (1).png" alt="Luggage & Travel Bags" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Luggage</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1119.png" alt="Travel Bags" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Travel Bags</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1120 (1).png" alt="Jewellery & Watches" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Jewellery</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1120.png" alt="Watches & Luxury" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Watches</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1121.png" alt="Gifts & Party" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Gifts</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1122.png" alt="Festivals & Supplies" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Festivals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP E: COMPACT BOTTOM BUTTONS -->
+      <div class="hero-buttons-row">
+        <div class="compact-btn-stack">
+          <button class="btn-want-to-know-compact" id="btnWantToKnow" onclick="toggleDetails()">
+            <span class="btn-know-text">Want to Know More?</span>
+            <span class="btn-know-icon"><i class="fa-solid fa-arrow-down" id="knowArrowIcon"></i></span>
+          </button>
+
+          <button class="btn-primary-join-compact" onclick="openWaitlistModal('general')">
+            <i class="fa-solid fa-bell"></i> Notify Me When Available
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP F: IN-HOUSE PRODUCT SHOWCASE WITH 3D RIBBON & ADD TO CART / BUY NOW -->
+      <div class="inhouse-product-section">
+        <!-- Product 1: Floral Planter (₹299) -->
+        <div class="inhouse-showcase-card" id="cardProduct1">
+          <div class="inhouse-visual-stage" id="stageProduct1">
+            <div class="inhouse-ribbon-panoramic">
+              <img src="ribbon-long-transparent.png" alt="Alifeo Original Ribbon"
+                class="inhouse-ribbon-bg inhouse-ribbon-bg-1" />
+            </div>
+            <!-- Pot Artwork with Interactive Escape & Drag-Back Game -->
+            <div class="inhouse-pot-wrapper" id="escapePotWrapper">
+              <img src="product-pot.png" alt="Handcrafted Floral Metal Planter" class="inhouse-pot-artwork"
+                id="escapePotImg" />
+              <div class="pot-escape-catch-bubble" id="potCatchBubble">
+                <i class="fa-solid fa-hand"></i> <span>Drag &amp; put me back in the frame! 🎯</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="inhouse-product-info">
+            <div class="inhouse-badge-row">
+              <span class="inhouse-pill-tag">ALIFEO IN-HOUSE</span>
+              <span class="inhouse-stock-tag">Original Edition</span>
+            </div>
+            <h3 class="inhouse-product-title">Handcrafted Floral Metal Planter</h3>
+            <p class="inhouse-product-desc">
+              Premium artisanal metal planter with vibrant floral enamelling. In-house production with precision care.
+            </p>
+            <div class="inhouse-price-row">
+              <span class="price-current">₹299</span>
+              <span class="price-mrp">₹799</span>
+              <span class="price-discount">62% OFF</span>
+            </div>
+          </div>
+
+          <div class="inhouse-actions-row">
+            <button class="btn-add-to-cart"
+              onclick="addToCart({ id: 'inhouse-planter-01', name: 'Handcrafted Floral Planter', price: 299, image: 'product-pot.png' })">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="btn-buy-now"
+              onclick="handleBuyNowClick({ id: 'inhouse-planter-01', name: 'Handcrafted Floral Planter', price: 299, image: 'product-pot.png' })">
+              <i class="fa-solid fa-bolt"></i> Buy Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2: Alifeo Signature Abstract Planter (₹299) -->
+        <div class="inhouse-showcase-card inhouse-card-secondary" id="cardProduct2">
+          <div class="inhouse-visual-stage" id="stageProduct2">
+            <div class="inhouse-ribbon-panoramic">
+              <img src="ribbon-long-transparent.png" alt="Alifeo Original Ribbon"
+                class="inhouse-ribbon-bg inhouse-ribbon-bg-2" />
+            </div>
+            <img src="product-alifeo-pot.png" alt="Alifeo Signature Abstract Table Planter"
+              class="inhouse-pot-artwork" />
+          </div>
+
+          <div class="inhouse-product-info">
+            <div class="inhouse-badge-row">
+              <span class="inhouse-pill-tag">ALIFEO IN-HOUSE</span>
+              <span class="inhouse-stock-tag">Signature Edition</span>
+            </div>
+            <h3 class="inhouse-product-title">Alifeo Signature Abstract Tabletop Planter</h3>
+            <p class="inhouse-product-desc">
+              Minimalist modern abstract art metal planter with tripod stand. Elegant in-house handcrafted home decor.
+            </p>
+            <div class="inhouse-price-row">
+              <span class="price-current">₹299</span>
+              <span class="price-mrp">₹799</span>
+              <span class="price-discount">62% OFF</span>
+            </div>
+          </div>
+
+          <div class="inhouse-actions-row">
+            <button class="btn-add-to-cart"
+              onclick="addToCart({ id: 'inhouse-planter-02', name: 'Alifeo Signature Abstract Planter', price: 299, image: 'product-alifeo-pot.png' })">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="btn-buy-now"
+              onclick="handleBuyNowClick({ id: 'inhouse-planter-02', name: 'Alifeo Signature Abstract Planter', price: 299, image: 'product-alifeo-pot.png' })">
+              <i class="fa-solid fa-bolt"></i> Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 4. REVEALABLE DETAILS SECTION (Opened on "Want to Know More?") -->
+  <section class="revealed-details-section" id="detailsSection">
+    <div class="container">
+      <div class="details-card-box">
+
+        <div class="details-header-text">
+          <span class="section-micro-tag">THE VISION</span>
+          <h2>One Marketplace. Endless Possibilities.</h2>
+          <p>Here is what we are preparing for shoppers, businesses, and riders.</p>
+        </div>
+
+        <div class="ecosystem-cards-grid">
+          <div class="feature-item-card">
+            <div class="card-icon-round bg-green-light text-green">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h3>Marketplace</h3>
+            <p>One unified marketplace connecting local shops and national sellers with millions of customers across
+              India.</p>
+            <button class="btn-card-link" onclick="openWaitlistModal('seller')">
+              Join as Seller &rarr;
+            </button>
+          </div>
+
+          <div class="feature-item-card highlight-card">
+            <div class="highlight-corner-badge">Zero Inventory</div>
+            <div class="card-icon-round bg-green-solid text-white">
+              <i class="fa-solid fa-shop"></i>
+            </div>
+            <h3>FBS Partner</h3>
+            <p>Sell branded products without purchasing or maintaining inventory. High commissions on walk-in and online
+              orders.</p>
+            <button class="btn-fbs-solid-card" onclick="openWaitlistModal('fbs')">
+              Join FBS Partner &rarr;
+            </button>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="card-icon-round bg-green-light text-green">
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h3>Express Delivery</h3>
+            <p>Fast and convenient local delivery network. Flexible hours, great earnings, and priority routes for
+              riders.</p>
+            <button class="btn-card-link" onclick="openWaitlistModal('rider')">
+              Join as Rider &rarr;
+            </button>
+          </div>
+        </div>
+
+        <div class="fbs-mini-container">
+          <div class="fbs-mini-head">
+            <h4>Become an FBS Partner</h4>
+            <span>Sell More. Invest Less. Earn Commission.</span>
+          </div>
+
+          <div class="fbs-steps-list">
+            <div class="fbs-step-mini">
+              <span class="step-circle">1</span>
+              <div><strong>No Stock Required</strong> — Zero upfront stock investment</div>
+            </div>
+            <div class="fbs-step-mini">
+              <span class="step-circle">2</span>
+              <div><strong>Sell Brand Products</strong> — Access high demand brand catalogs</div>
+            </div>
+            <div class="fbs-step-mini">
+              <span class="step-circle">3</span>
+              <div><strong>Get Orders</strong> — Direct customer orders assigned to you</div>
+            </div>
+            <div class="fbs-step-mini">
+              <span class="step-circle">4</span>
+              <div><strong>Manage Delivery</strong> — Coordinate customer fulfillment</div>
+            </div>
+            <div class="fbs-step-mini">
+              <span class="step-circle highlight-circle"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+              <div><strong>Earn Commission</strong> — Payouts on walk-in & online sales</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-form-box" id="quickForm">
+          <div class="form-title-col">
+            <h3>Register for Early Access</h3>
+            <p>Fill this quick 30-second form to lock in founding benefits and receive email notifications.</p>
+          </div>
+
+          <form id="inlineWaitlistForm" class="clean-waitlist-form" onsubmit="handleFormSubmit(event, this)">
+            <div class="form-grid-fields">
+              <div class="form-group-item">
+                <label>Select Role *</label>
+                <select name="role" required class="input-ctrl">
+                  <option value="FBS Partner">FBS Partner (Zero Stock Shop)</option>
+                  <option value="Seller">Seller (Local or National)</option>
+                  <option value="Rider">Rider (Delivery Partner)</option>
+                  <option value="Customer">Early Shopper / General Member</option>
+                </select>
+              </div>
+
+              <div class="form-group-item">
+                <label>Full Name *</label>
+                <input type="text" name="name" required placeholder="e.g. Rahul Sharma" class="input-ctrl" />
+              </div>
+
+              <div class="form-group-item">
+                <label>Mobile Number *</label>
+                <input type="tel" name="phone" required placeholder="e.g. 9876543210" class="input-ctrl" />
+              </div>
+
+              <div class="form-group-item">
+                <label>Email Address *</label>
+                <input type="email" name="email" required placeholder="e.g. rahul@example.com" class="input-ctrl" />
+              </div>
+
+              <div class="form-group-item full-width-field">
+                <label>City & State *</label>
+                <input type="text" name="city" required placeholder="e.g. New Delhi, Delhi" class="input-ctrl" />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-action">
+              <span class="btn-text">Submit My Application</span>
+              <span class="btn-spinner" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i>
+                Submitting...</span>
+            </button>
+
+            <div class="form-feedback-msg" id="inlineFeedback"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TIC-TAC-TOE (X / O) GAME MODAL -->
+  <div class="game-modal-backdrop" id="gameModal">
+    <div class="game-modal-window">
+      <button class="modal-close-icon" onclick="closeGameModal()">&times;</button>
+
+      <div class="game-header">
+        <span class="game-pill">ALIFEO MINI BREAK</span>
+        <h3>Play X / O Game</h3>
+        <p id="gameStatusText">Your turn: <strong>Player (X)</strong></p>
+      </div>
+
+      <div class="game-scoreboard">
+        <div class="score-card player-x-card">
+          <span class="sc-label">You (X)</span>
+          <span class="sc-val" id="scoreX">0</span>
+        </div>
+        <div class="score-card ties-card">
+          <span class="sc-label">Ties</span>
+          <span class="sc-val" id="scoreTies">0</span>
+        </div>
+        <div class="score-card player-o-card">
+          <span class="sc-label">AI Bot (O)</span>
+          <span class="sc-val" id="scoreO">0</span>
+        </div>
+      </div>
+
+      <div class="tictactoe-grid" id="tictactoeGrid">
+        <button class="game-cell" data-index="0"></button>
+        <button class="game-cell" data-index="1"></button>
+        <button class="game-cell" data-index="2"></button>
+        <button class="game-cell" data-index="3"></button>
+        <button class="game-cell" data-index="4"></button>
+        <button class="game-cell" data-index="5"></button>
+        <button class="game-cell" data-index="6"></button>
+        <button class="game-cell" data-index="7"></button>
+        <button class="game-cell" data-index="8"></button>
+      </div>
+
+      <div class="game-footer-actions">
+        <button class="btn-reset-game" onclick="resetGameBoard()">
+          <i class="fa-solid fa-rotate-right"></i> Play Again
+        </button>
+        <button class="btn-game-join" onclick="closeGameModal(); openWaitlistModal('general');">
+          Join Waitlist &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. FOLDER-TAB SHAPED CARD FOOTER -->
+  <footer class="folder-card-footer-section">
+    <div class="container footer-container-outer">
+      <div class="folder-tab-card-wrapper">
+        <div class="folder-card-content">
+          <div class="footer-brand-col">
+            <img src="logo.svg" alt="Alifeo" class="alifeo-svg-logo footer-logo" />
+            <p class="footer-desc">
+              We're building something worth waiting for. Under development to bring a great experience for shoppers,
+              merchants, and riders across India.
+            </p>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Programmes</h4>
+            <ul>
+              <li><a href="javascript:void(0)" onclick="openWaitlistModal('fbs')">FBS Partner</a></li>
+              <li><a href="javascript:void(0)" onclick="openWaitlistModal('seller')">Sell Online</a></li>
+              <li><a href="javascript:void(0)" onclick="openWaitlistModal('rider')">Become a Rider</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact-col">
+            <h4>Contact & Updates</h4>
+            <p class="contact-item">
+              <i class="fa-solid fa-envelope text-green"></i>
+              <a href="mailto:alifeo.com@gmail.com">alifeo.com@gmail.com</a>
+            </p>
+            <p class="contact-item">
+              <i class="fa-brands fa-whatsapp text-green"></i>
+              <a href="https://wa.me/918869088480?text=Hello%20Alifeo!%20I%20have%20an%20inquiry." target="_blank"
+                rel="noopener noreferrer">+91 88690 88480</a>
+            </p>
+            <p class="contact-item">
+              <i class="fa-brands fa-instagram text-green"></i>
+              <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer">@alifeoapp</a>
+            </p>
+          </div>
+
+          <div class="folder-bottom-copyright">
+            <p>&copy; <span id="currentYear">2026</span> All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 7. WAITLIST POPUP MODAL -->
+  <div class="modal-backdrop" id="waitlistModal">
+    <div class="modal-window">
+      <button class="modal-close-icon" onclick="closeWaitlistModal()">&times;</button>
+
+      <div class="modal-top">
+        <span class="modal-pill" id="modalRoleBadge">JOIN WAITLIST</span>
+        <h3 id="modalTitle">Join the Movement</h3>
+        <p id="modalSubtitle">Be the first to know when registrations open in your area.</p>
+      </div>
+
+      <form id="modalForm" class="clean-waitlist-form" onsubmit="handleFormSubmit(event, this)">
+        <input type="hidden" name="role" id="modalRoleInput" value="Waitlist" />
+
+        <div class="form-group-item">
+          <label>Full Name *</label>
+          <input type="text" name="name" required placeholder="Enter your full name" class="input-ctrl" />
+        </div>
+        <div class="form-group-item">
+          <label>Mobile Number *</label>
+          <input type="tel" name="phone" required placeholder="Enter 10-digit mobile number" class="input-ctrl" />
+        </div>
+        <div class="form-group-item">
+          <label>Email Address *</label>
+          <input type="email" name="email" required placeholder="Enter email address" class="input-ctrl" />
+        </div>
+        <div class="form-group-item">
+          <label>City & State *</label>
+          <input type="text" name="city" required placeholder="e.g. Mumbai, Maharashtra" class="input-ctrl" />
+        </div>
+
+        <button type="submit" class="btn-submit-action">
+          <span class="btn-text">Confirm Application</span>
+          <span class="btn-spinner" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i>
+            Submitting...</span>
+        </button>
+
+        <div class="form-feedback-msg" id="modalFeedback"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 8. COOKING / CANNOT ACCEPT ORDERS NOTICE MODAL -->
+  <div class="modal-backdrop" id="orderNoticeModal">
+    <div class="modal-window notice-modal-window">
+      <button class="modal-close-icon" onclick="closeOrderNoticeModal()">&times;</button>
+
+      <div class="notice-modal-content">
+        <div class="notice-icon-bubble">
+          <i class="fa-solid fa-fire-burner"></i>
+        </div>
+
+        <span class="notice-pill-tag">CURRENTLY UNDER DEVELOPMENT</span>
+        <h3 class="notice-modal-title">We're Cooking Something Great!</h3>
+
+        <p class="notice-modal-desc">
+          We are currently not accepting direct online orders right now as our store is in active development.
+        </p>
+
+        <div class="notice-apology-box">
+          <i class="fa-solid fa-heart text-green"></i>
+          <span>Sorry for the inconvenience. Your selected item is safely stored in your cart!</span>
+        </div>
+
+        <div class="notice-reach-section">
+          <h4>Need this or have bulk inquiries? Reach us directly:</h4>
+
+          <div class="notice-channel-list">
+            <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer"
+              class="channel-card instagram-card">
+              <i class="fa-brands fa-instagram"></i>
+              <div>
+                <strong>Instagram</strong>
+                <span>@alifeoapp</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+            </a>
+
+            <a href="https://wa.me/918869088480?text=Hello%20Alifeo%20Team!%20I%20am%20interested%20in%20your%20products."
+              target="_blank" rel="noopener noreferrer" class="channel-card whatsapp-card">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp Support</strong>
+                <span>+91 88690 88480</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+            </a>
+
+            <a href="mailto:alifeo.com@gmail.com" class="channel-card email-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Official Email</strong>
+                <span>alifeo.com@gmail.com</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+            </a>
+          </div>
+        </div>
+
+        <button class="btn-notice-dismiss" onclick="closeOrderNoticeModal()">
+          Got It, Thanks!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. FREE MINI POT GIVEAWAY MODAL (CLEAN WHITE TICKET STYLE) -->
+  <div class="modal-backdrop" id="winRewardModal">
+    <div class="modal-window reward-ticket-modal-window">
+      <button class="modal-close-icon reward-ticket-close" onclick="closeRewardModal()">&times;</button>
+
+      <!-- Clean Minimal White Ticket -->
+      <div class="clean-white-giveaway-ticket">
+        <!-- Top Row with Pot Image on Side -->
+        <div class="giveaway-header-row">
+          <div class="giveaway-text-col">
+            <span class="giveaway-pill-tag"><i class="fa-solid fa-gift"></i> GIVEAWAY ENTRY</span>
+            <h3 class="giveaway-title">You got a chance to win a Free Mini Pot!</h3>
+            <p class="giveaway-subtitle">Thanks for saving our planter! Complete these quick steps to enter the
+              giveaway:</p>
+          </div>
+          <div class="giveaway-pot-col">
+            <img src="product-pot.png" alt="Free Mini Pot" class="giveaway-pot-img" />
+          </div>
+        </div>
+
+        <!-- Clean Perforation Divider -->
+        <div class="giveaway-ticket-divider">
+          <div class="gt-notch gt-notch-left"></div>
+          <div class="gt-dash-line"></div>
+          <div class="gt-notch gt-notch-right"></div>
+        </div>
+
+        <!-- Giveaway Steps & Announcement -->
+        <div class="giveaway-body-content">
+          <div class="giveaway-steps-list">
+            <div class="giveaway-step-item">
+              <span class="step-num">1</span>
+              <p>Share <strong>Alifeo App</strong> with <strong>5 friends</strong> on WhatsApp.</p>
+            </div>
+            <div class="giveaway-step-item">
+              <span class="step-num">2</span>
+              <p>Once your 5 friends download the app, put a story on your Instagram: <em>"Win Free Mini Pot! Download
+                  Alifeo App"</em> and mention <strong>@alifeoapp</strong>.</p>
+            </div>
+            <div class="giveaway-step-item">
+              <span class="step-num">3</span>
+              <p>Take screenshots of the downloads &amp; story, and send them to us on Instagram DM
+                <strong>@alifeoapp</strong>!</p>
+            </div>
+          </div>
+
+          <!-- Weekly Winner Notice -->
+          <div class="giveaway-weekly-announcement">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Winners announced every week on Instagram <strong>@alifeoapp</strong>!</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="giveaway-action-buttons">
+            <button type="button" class="btn-giveaway-whatsapp" onclick="shareWithFriendsWhatsApp()">
+              <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+            </button>
+            <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer"
+              class="btn-giveaway-insta">
+              <i class="fa-brands fa-instagram"></i> Send SS to @alifeoapp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-notification" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

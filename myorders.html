@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders — Alifeo</title>
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="shortcut icon" href="logo.svg" />
+  <link rel="alternate icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-solid-green-bar"></div>
+
+  <!-- Navbar -->
+  <header class="clean-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="Alifeo">
+        <img src="logo.svg" alt="Alifeo Logo" class="alifeo-svg-logo" />
+      </a>
+      <div class="nav-right-actions">
+        <a href="index.html" class="btn-header-join">
+          Explore App
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-body-container">
+    <div class="container app-subpage-container">
+
+      <!-- Breadcrumb / Back Link -->
+      <div class="subpage-top-bar">
+        <a href="index.html" class="btn-back-link"><i class="fa-solid fa-arrow-left"></i> Home</a>
+        <h2>My Account & Orders</h2>
+      </div>
+
+      <!-- Clean Account Welcome Card -->
+      <div class="clean-account-card">
+        <h3>Welcome to your account</h3>
+        <p>Your orders and profile details will appear here once live.</p>
+      </div>
+
+      <!-- Under Development Notice Box -->
+      <div class="order-freeze-banner">
+        <div class="freeze-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <div class="freeze-text">
+          <strong>Under Active Development</strong>
+          <p>We are cooking something extraordinary right now, so automated order tracking is paused. Currently no live
+            orders to display.</p>
+        </div>
+      </div>
+
+      <!-- Assistance & Support Box -->
+      <div class="orders-help-card">
+        <h4>Need assistance or previous order details?</h4>
+        <p>Our dedicated support team is ready to help you 24/7:</p>
+
+        <div class="support-channels-grid">
+          <a href="mailto:alifeo.com@gmail.com" class="channel-chip email">
+            <i class="fa-solid fa-envelope"></i> Reach Support: alifeo.com@gmail.com
+          </a>
+          <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer"
+            class="channel-chip insta">
+            <i class="fa-brands fa-instagram"></i> Instagram: @alifeoapp
+          </a>
+          <a href="https://wa.me/918869088480?text=Hello%20Alifeo%20Support!%20I%20need%20help%20with%20my%20account."
+            target="_blank" rel="noopener noreferrer" class="channel-chip whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 88690 88480
+          </a>
+        </div>
+      </div>
+
+      <div class="myorders-quick-nav">
+        <a href="cart.html" class="btn-secondary-link"><i class="fa-solid fa-cart-shopping"></i> View Saved Cart</a>
+        <a href="index.html" class="btn-primary-link"><i class="fa-solid fa-house"></i> Back to Homepage</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOLDER-TAB SHAPED CARD FOOTER -->
+  <footer class="folder-card-footer-section">
+    <div class="container footer-container-outer">
+      <div class="folder-tab-card-wrapper">
+        <div class="folder-card-content">
+          <div class="footer-brand-col">
+            <img src="logo.svg" alt="Alifeo" class="alifeo-svg-logo footer-logo" />
+            <p class="footer-desc">
+              We're building something worth waiting for. Under development to bring a great experience for shoppers,
+              merchants, and riders across India.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Programmes</h4>
+            <ul>
+              <li><a href="index.html">FBS Partner</a></li>
+              <li><a href="index.html">Sell Online</a></li>
+              <li><a href="index.html">Become a Rider</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4>Contact & Updates</h4>
+            <p class="contact-item"><i class="fa-solid fa-envelope text-green"></i> <a
+                href="mailto:alifeo.com@gmail.com">alifeo.com@gmail.com</a></p>
+            <p class="contact-item"><i class="fa-brands fa-whatsapp text-green"></i> <a
+                href="https://wa.me/918869088480?text=Hello%20Alifeo!%20I%20have%20an%20inquiry." target="_blank"
+                rel="noopener noreferrer">+91 88690 88480</a></p>
+            <p class="contact-item"><i class="fa-brands fa-instagram text-green"></i> <a
+                href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer">@alifeoapp</a></p>
+          </div>
+          <div class="folder-bottom-copyright">
+            <p>&copy; 2026 All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-notification" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

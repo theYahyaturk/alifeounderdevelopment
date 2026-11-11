@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart — Alifeo</title>
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="shortcut icon" href="logo.svg" />
+  <link rel="alternate icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-solid-green-bar"></div>
+
+  <!-- Navbar -->
+  <header class="clean-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="Alifeo">
+        <img src="logo.svg" alt="Alifeo Logo" class="alifeo-svg-logo" />
+      </a>
+      <div class="nav-right-actions">
+        <a href="index.html" class="btn-header-join">
+          Explore App
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-body-container">
+    <div class="container app-subpage-container">
+
+      <!-- Breadcrumb / Back Link -->
+      <div class="subpage-top-bar">
+        <a href="index.html" class="btn-back-link"><i class="fa-solid fa-arrow-left"></i> Continue Exploring</a>
+        <h2>My Cart</h2>
+      </div>
+
+      <!-- Development / Notice Alert Banner -->
+      <div class="order-freeze-banner">
+        <div class="freeze-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+        <div class="freeze-text">
+          <strong>Currently Cooking & Under Development</strong>
+          <p>We are currently not accepting direct online orders right now. Sorry for the inconvenience!</p>
+        </div>
+      </div>
+
+      <!-- Cart Items List Container -->
+      <div class="cart-items-wrapper" id="cartItemsList">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Cart Summary & Checkout -->
+      <div class="cart-summary-box" id="cartSummaryBox">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div class="summary-line">
+          <span>Delivery</span>
+          <span class="text-green font-semibold">FREE (Launch Offer)</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Grand Total</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+
+        <button class="btn-checkout-notice" onclick="openOrderNoticeModal()">
+          <i class="fa-solid fa-lock"></i> Proceed to Checkout
+        </button>
+      </div>
+
+      <!-- Direct Contact & Support Channels -->
+      <div class="support-channels-card">
+        <h3>Need to Place an Urgent Order?</h3>
+        <p>Connect with our in-house team directly:</p>
+
+        <div class="support-channels-grid">
+          <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer"
+            class="channel-chip insta">
+            <i class="fa-brands fa-instagram"></i> Instagram: @alifeoapp
+          </a>
+          <a href="https://wa.me/918869088480?text=Hi%20Alifeo!%20I%20have%20an%20order%20inquiry." target="_blank"
+            rel="noopener noreferrer" class="channel-chip whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 88690 88480
+          </a>
+          <a href="mailto:alifeo.com@gmail.com" class="channel-chip email">
+            <i class="fa-solid fa-envelope"></i> Email: alifeo.com@gmail.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOLDER-TAB SHAPED CARD FOOTER -->
+  <footer class="folder-card-footer-section">
+    <div class="container footer-container-outer">
+      <div class="folder-tab-card-wrapper">
+        <div class="folder-card-content">
+          <div class="footer-brand-col">
+            <img src="logo.svg" alt="Alifeo" class="alifeo-svg-logo footer-logo" />
+            <p class="footer-desc">
+              We're building something worth waiting for. Under development to bring a great experience for shoppers,
+              merchants, and riders across India.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Programmes</h4>
+            <ul>
+              <li><a href="index.html">FBS Partner</a></li>
+              <li><a href="index.html">Sell Online</a></li>
+              <li><a href="index.html">Become a Rider</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4>Contact & Updates</h4>
+            <p class="contact-item"><i class="fa-solid fa-envelope text-green"></i> <a
+                href="mailto:alifeo.com@gmail.com">alifeo.com@gmail.com</a></p>
+            <p class="contact-item"><i class="fa-brands fa-whatsapp text-green"></i> <a
+                href="https://wa.me/918869088480?text=Hello%20Alifeo!%20I%20have%20an%20inquiry." target="_blank"
+                rel="noopener noreferrer">+91 88690 88480</a></p>
+            <p class="contact-item"><i class="fa-brands fa-instagram text-green"></i> <a
+                href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer">@alifeoapp</a></p>
+          </div>
+          <div class="folder-bottom-copyright">
+            <p>&copy; 2026 All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKING / ORDER NOTICE MODAL -->
+  <div class="modal-backdrop" id="orderNoticeModal">
+    <div class="modal-window notice-modal-window">
+      <button class="modal-close-icon" onclick="closeOrderNoticeModal()">&times;</button>
+      <div class="notice-modal-content">
+        <div class="notice-icon-bubble"><i class="fa-solid fa-fire-burner"></i></div>
+        <span class="notice-pill-tag">UNDER DEVELOPMENT</span>
+        <h3 class="notice-modal-title">We're Cooking Something Great!</h3>
+        <p class="notice-modal-desc">
+          Currently we don't accept orders right now as we are actively building the complete platform.
+        </p>
+        <div class="notice-apology-box">
+          <i class="fa-solid fa-heart text-green"></i>
+          <span>Sorry for the inconvenience! We are launching very soon.</span>
+        </div>
+
+        <div class="notice-reach-section">
+          <h4>Reach us for immediate order inquiry:</h4>
+          <div class="notice-channel-list">
+            <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer"
+              class="channel-card instagram-card">
+              <i class="fa-brands fa-instagram"></i>
+              <div><strong>Instagram</strong><span>@alifeoapp</span></div>
+              <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+            </a>
+            <a href="https://wa.me/918869088480?text=Hello%20Alifeo!%20I%20would%20like%20to%20order." target="_blank"
+              rel="noopener noreferrer" class="channel-card whatsapp-card">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div><strong>WhatsApp</strong><span>+91 88690 88480</span></div>
+              <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+            </a>
+            <a href="mailto:alifeo.com@gmail.com" class="channel-card email-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div><strong>Email</strong><span>alifeo.com@gmail.com</span></div>
+              <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+            </a>
+          </div>
+        </div>
+
+        <button class="btn-notice-dismiss" onclick="closeOrderNoticeModal()">Got It</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-notification" id="toast"></div>
+
+  <script src="script.js"></script>
+  <script>
+    function renderCartPage() {
+      const listEl = document.getElementById('cartItemsList');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      const totalEl = document.getElementById('cartTotal');
+      const summaryBox = document.getElementById('cartSummaryBox');
+
+      const items = getCartItems();
+      if (!listEl) return;
+
+      if (items.length === 0) {
+        listEl.innerHTML = `
+          <div class="cart-empty-state">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>Your Cart is Empty</h3>
+            <p>Explore our in-house collection and upcoming categories!</p>
+            <a href="index.html" class="btn-explore-link">Explore Products</a>
+          </div>
+        `;
+        if (summaryBox) summaryBox.style.display = 'none';
+        return;
+      }
+
+      if (summaryBox) summaryBox.style.display = 'block';
+
+      let total = 0;
+      listEl.innerHTML = items.map((item, idx) => {
+        const itemTotal = (item.price || 0) * (item.qty || 1);
+        total += itemTotal;
+        return `
+          <div class="cart-card-row">
+            <img src="${item.image || 'product-pot.png'}" alt="${item.name}" class="cart-thumb" />
+            <div class="cart-details">
+              <h4>${item.name}</h4>
+              <span class="cart-unit-price">₹${item.price}</span>
+              <div class="qty-stepper">
+                <button onclick="changeCartQty(${idx}, -1)">-</button>
+                <span>${item.qty || 1}</span>
+                <button onclick="changeCartQty(${idx}, 1)">+</button>
+              </div>
+            </div>
+            <button class="btn-remove-item" onclick="removeCartItem(${idx})">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      if (subtotalEl) subtotalEl.innerText = `₹${total}`;
+      if (totalEl) totalEl.innerText = `₹${total}`;
+    }
+
+    function changeCartQty(idx, delta) {
+      const items = getCartItems();
+      if (items[idx]) {
+        items[idx].qty = (items[idx].qty || 1) + delta;
+        if (items[idx].qty <= 0) {
+          items.splice(idx, 1);
+        }
+        saveCartItems(items);
+        renderCartPage();
+      }
+    }
+
+    function removeCartItem(idx) {
+      const items = getCartItems();
+      items.splice(idx, 1);
+      saveCartItems(items);
+      renderCartPage();
+      showToast('Item removed from cart');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+      updateCartBadge();
+    });
+  </script>
+</body>
+
+</html>

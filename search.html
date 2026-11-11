@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Catalog — Alifeo</title>
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="shortcut icon" href="logo.svg" />
+  <link rel="alternate icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-solid-green-bar"></div>
+
+  <!-- Navbar -->
+  <header class="clean-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="Alifeo">
+        <img src="logo.svg" alt="Alifeo Logo" class="alifeo-svg-logo" />
+      </a>
+      <div class="nav-right-actions">
+        <a href="index.html" class="btn-header-join">
+          Explore App
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-body-container">
+    <div class="container app-subpage-container">
+
+      <!-- Back bar -->
+      <div class="subpage-top-bar">
+        <a href="index.html" class="btn-back-link"><i class="fa-solid fa-arrow-left"></i> Home</a>
+        <h2>Explore Catalog</h2>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="catalogSearchInput" placeholder="Search planter, brass, fashion, electronics..."
+          oninput="handleCatalogSearch(this.value)" autofocus />
+      </div>
+
+      <!-- Development / Notice Alert Banner -->
+      <div class="order-freeze-banner">
+        <div class="freeze-icon"><i class="fa-solid fa-store-slash"></i></div>
+        <div class="freeze-text">
+          <strong>Catalog Preview Mode</strong>
+          <p>Currently we do not receive orders right now. Sorry for the inconvenience — platform under development!</p>
+        </div>
+      </div>
+
+      <!-- Search Results / Catalog Grid -->
+      <div class="search-catalog-grid" id="searchCatalogGrid">
+        <!-- In-House Product 1 -->
+        <div class="catalog-product-card">
+          <span class="inhouse-pill-tag">In-House</span>
+          <img src="product-pot.png" alt="Handcrafted Floral Planter" class="catalog-thumb" />
+          <h4>Handcrafted Floral Planter</h4>
+          <p class="catalog-brass-tag">Artisanal Floral Brass & Metal</p>
+          <div class="catalog-price-row">
+            <span class="price-current">₹299</span>
+            <span class="price-mrp">₹799</span>
+          </div>
+          <div class="catalog-actions">
+            <button class="btn-cat-add-cart"
+              onclick="addToCart({ id: 'inhouse-planter-01', name: 'Handcrafted Floral Planter', price: 299, image: 'product-pot.png' })">
+              <i class="fa-solid fa-cart-plus"></i> Add
+            </button>
+            <button class="btn-cat-buy"
+              onclick="handleBuyNowClick({ id: 'inhouse-planter-01', name: 'Handcrafted Floral Planter', price: 299, image: 'product-pot.png' })">
+              Buy Now
+            </button>
+          </div>
+        </div>
+
+        <!-- In-House Product 2 -->
+        <div class="catalog-product-card">
+          <span class="inhouse-pill-tag">In-House</span>
+          <img src="product-alifeo-pot.png" alt="Alifeo Signature Abstract Planter" class="catalog-thumb" />
+          <h4>Alifeo Signature Abstract Planter</h4>
+          <p class="catalog-brass-tag">Modern Minimalist Tripod Planter</p>
+          <div class="catalog-price-row">
+            <span class="price-current">₹299</span>
+            <span class="price-mrp">₹799</span>
+          </div>
+          <div class="catalog-actions">
+            <button class="btn-cat-add-cart"
+              onclick="addToCart({ id: 'inhouse-planter-02', name: 'Alifeo Signature Abstract Planter', price: 299, image: 'product-alifeo-pot.png' })">
+              <i class="fa-solid fa-cart-plus"></i> Add
+            </button>
+            <button class="btn-cat-buy"
+              onclick="handleBuyNowClick({ id: 'inhouse-planter-02', name: 'Alifeo Signature Abstract Planter', price: 299, image: 'product-alifeo-pot.png' })">
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support / Contact -->
+      <div class="support-channels-card">
+        <h3>Looking for specific products or custom manufacturing?</h3>
+        <p>Reach out directly to our team:</p>
+        <div class="support-channels-grid">
+          <a href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer"
+            class="channel-chip insta">
+            <i class="fa-brands fa-instagram"></i> @alifeoapp
+          </a>
+          <a href="https://wa.me/918869088480?text=Hi%20Alifeo!%20I%20have%20an%20inquiry." target="_blank"
+            rel="noopener noreferrer" class="channel-chip whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 88690 88480
+          </a>
+          <a href="mailto:alifeo.com@gmail.com" class="channel-chip email">
+            <i class="fa-solid fa-envelope"></i> alifeo.com@gmail.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOLDER-TAB SHAPED CARD FOOTER -->
+  <footer class="folder-card-footer-section">
+    <div class="container footer-container-outer">
+      <div class="folder-tab-card-wrapper">
+        <div class="folder-card-content">
+          <div class="footer-brand-col">
+            <img src="logo.svg" alt="Alifeo" class="alifeo-svg-logo footer-logo" />
+            <p class="footer-desc">
+              We're building something worth waiting for. Under development to bring a great experience for shoppers,
+              merchants, and riders across India.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Programmes</h4>
+            <ul>
+              <li><a href="index.html">FBS Partner</a></li>
+              <li><a href="index.html">Sell Online</a></li>
+              <li><a href="index.html">Become a Rider</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4>Contact & Updates</h4>
+            <p class="contact-item"><i class="fa-solid fa-envelope text-green"></i> <a
+                href="mailto:alifeo.com@gmail.com">alifeo.com@gmail.com</a></p>
+            <p class="contact-item"><i class="fa-brands fa-whatsapp text-green"></i> <a
+                href="https://wa.me/918869088480?text=Hello%20Alifeo!%20I%20have%20an%20inquiry." target="_blank"
+                rel="noopener noreferrer">+91 88690 88480</a></p>
+            <p class="contact-item"><i class="fa-brands fa-instagram text-green"></i> <a
+                href="https://instagram.com/alifeoapp" target="_blank" rel="noopener noreferrer">@alifeoapp</a></p>
+          </div>
+          <div class="folder-bottom-copyright">
+            <p>&copy; 2026 All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKING / ORDER NOTICE MODAL -->
+  <div class="modal-backdrop" id="orderNoticeModal">
+    <div class="modal-window notice-modal-window">
+      <button class="modal-close-icon" onclick="closeOrderNoticeModal()">&times;</button>
+      <div class="notice-modal-content">
+        <div class="notice-icon-bubble"><i class="fa-solid fa-fire-burner"></i></div>
+        <span class="notice-pill-tag">UNDER DEVELOPMENT</span>
+        <h3 class="notice-modal-title">We're Cooking Something Great!</h3>
+        <p class="notice-modal-desc">
+          Currently we do not receive orders right now. Sorry for the inconvenience! We are working hard to bring full
+          ordering to life.
+        </p>
+        <div class="notice-apology-box">
+          <i class="fa-solid fa-heart text-green"></i>
+          <span>Reach out directly via Instagram @alifeoapp or alifeo.com@gmail.com for priority access.</span>
+        </div>
+        <button class="btn-notice-dismiss" onclick="closeOrderNoticeModal()">Got It</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-notification" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
