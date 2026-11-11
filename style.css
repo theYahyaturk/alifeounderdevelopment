@@ -201,9 +201,20 @@ body {
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: var(--transition);
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn-header-join:hover {
   background: var(--alifeo-green-hover);
+  color: #ffffff;
+  text-decoration: none !important;
+}
+
+/* Subpage navbar button (Explore App) - strictly hidden on phone/mobile UI */
+.subpage-header-btn {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -1035,8 +1046,8 @@ body {
    CLEAN WHITE GIVEAWAY TICKET (Minimal, White & Simple Colors, Pot Image on Side)
    ========================================================================== */
 .reward-ticket-modal-window {
-  max-width: 390px;
-  width: 92%;
+  max-width: 326px;
+  width: 90%;
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -1046,19 +1057,19 @@ body {
 
 .reward-ticket-close {
   position: absolute !important;
-  top: -14px !important;
-  right: -10px !important;
+  top: -10px !important;
+  right: -6px !important;
   background: #ffffff !important;
   color: #111827 !important;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--border-subtle);
   cursor: pointer;
   z-index: 20;
@@ -1075,15 +1086,15 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
 }
 
-/* Header with Pot Image on Side */
+/* Header with Pot Image on Side - Compact */
 .giveaway-header-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 22px 20px 16px;
+  gap: 10px;
+  padding: 12px 14px 8px;
   background: #ffffff;
 }
 
@@ -1095,56 +1106,56 @@ body {
 .giveaway-pill-tag {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   background: var(--alifeo-green-light);
   color: var(--alifeo-green);
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 3px 9px;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 .giveaway-title {
-  font-size: 1.12rem;
+  font-size: 0.94rem;
   font-weight: 700;
   color: var(--text-main);
-  line-height: 1.3;
-  margin-bottom: 4px;
+  line-height: 1.25;
+  margin-bottom: 2px;
 }
 
 .giveaway-subtitle {
-  font-size: 0.74rem;
+  font-size: 0.67rem;
   color: var(--text-muted);
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
 .giveaway-pot-col {
   flex-shrink: 0;
-  width: 76px;
-  height: 76px;
+  width: 48px;
+  height: 48px;
   background: #f8faf9;
   border: 1px solid #e2ece6;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 3px;
 }
 
 .giveaway-pot-img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
 }
 
-/* Subtle Perforation Divider */
+/* Subtle Perforation Divider - Compact */
 .giveaway-ticket-divider {
   position: relative;
   width: 100%;
-  height: 20px;
+  height: 14px;
   display: flex;
   align-items: center;
 }
@@ -1153,51 +1164,51 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   z-index: 5;
 }
 .gt-notch-left {
-  left: -9px;
+  left: -7px;
 }
 .gt-notch-right {
-  right: -9px;
+  right: -7px;
 }
 
 .gt-dash-line {
   width: 100%;
   border-top: 1.5px dashed #d1d5db;
-  margin: 0 16px;
+  margin: 0 12px;
 }
 
-/* Body Content & Steps */
+/* Body Content & Steps - Compact */
 .giveaway-body-content {
-  padding: 14px 20px 20px;
+  padding: 8px 12px 12px;
 }
 
 .giveaway-steps-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   text-align: left;
-  margin-bottom: 14px;
+  margin-bottom: 7px;
 }
 
 .giveaway-step-item {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 7px;
   background: #f9fafb;
   border: 1px solid #f0f2f4;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
+  padding: 5px 8px;
+  border-radius: 6px;
 }
 
 .giveaway-step-item .step-num {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: var(--alifeo-green);
   color: #ffffff;
@@ -1205,15 +1216,14 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   flex-shrink: 0;
-  margin-top: 1px;
 }
 
 .giveaway-step-item p {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   color: var(--text-main);
-  line-height: 1.4;
+  line-height: 1.25;
   margin: 0;
 }
 
@@ -1228,33 +1238,33 @@ body {
   font-weight: 600;
 }
 
-/* Weekly Winner Announcement Box */
+/* Weekly Winner Announcement Box - Compact */
 .giveaway-weekly-announcement {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: #fefce8;
   border: 1px solid #fef08a;
   color: #854d0e;
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  font-size: 0.74rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.64rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   text-align: left;
 }
 
 .giveaway-weekly-announcement i {
   color: #ca8a04;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   flex-shrink: 0;
 }
 
-/* Action Buttons */
+/* Action Buttons - Compact */
 .giveaway-action-buttons {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 6px;
 }
 
 .btn-giveaway-whatsapp {
@@ -1262,17 +1272,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   background: #25d366;
   color: #ffffff;
   border: none;
   font-family: inherit;
-  font-size: 0.86rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  padding: 11px;
+  padding: 7px 10px;
   border-radius: var(--radius-full);
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 3px 8px rgba(37, 211, 102, 0.25);
   transition: transform 0.15s ease;
 }
 
@@ -1285,15 +1295,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   background: #111827;
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.86rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  padding: 11px;
+  padding: 7px 10px;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.15s ease;
 }
 
@@ -1577,11 +1587,9 @@ body {
   max-width: 440px;
 }
 
+/* Subpage top bar (Home / Continue Exploring / Title) - hidden on mobile phone UI */
 .subpage-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 0;
+  display: none !important;
 }
 .subpage-top-bar h2 {
   font-size: 1.15rem;
@@ -3069,8 +3077,67 @@ body {
     max-width: 900px !important;
   }
 
+  .subpage-header-btn {
+    display: inline-flex !important;
+  }
+
+  .subpage-top-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+
   .search-catalog-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 18px !important;
+  }
+
+  /* Desktop Giveaway Ticket Window */
+  .reward-ticket-modal-window {
+    max-width: 380px;
+  }
+
+  .giveaway-header-row {
+    padding: 18px 18px 12px;
+    gap: 12px;
+  }
+
+  .giveaway-pot-col {
+    width: 60px;
+    height: 60px;
+  }
+
+  .giveaway-title {
+    font-size: 1.08rem;
+  }
+
+  .giveaway-subtitle {
+    font-size: 0.74rem;
+  }
+
+  .giveaway-body-content {
+    padding: 12px 18px 16px;
+  }
+
+  .giveaway-step-item {
+    padding: 7px 10px;
+    gap: 8px;
+  }
+
+  .giveaway-step-item p {
+    font-size: 0.74rem;
+  }
+
+  .giveaway-weekly-announcement {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+
+  .btn-giveaway-whatsapp,
+  .btn-giveaway-insta {
+    padding: 9px 12px;
+    font-size: 0.82rem;
   }
 }
