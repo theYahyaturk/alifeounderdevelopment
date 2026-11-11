@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting — Alifeo</title>
+  <script>
+    (function() {
+      var p = window.location.pathname.replace(/\/+$/, "");
+      if (p.endsWith("/my-account/orders") || p === "/my-account/orders") {
+        window.location.replace("/myorders.html");
+      } else if (p.endsWith("/myorders") || p === "/myorders") {
+        window.location.replace("/myorders.html");
+      } else if (p.endsWith("/cart") || p === "/cart") {
+        window.location.replace("/cart.html");
+      } else if (p.endsWith("/search") || p === "/search") {
+        window.location.replace("/search.html");
+      } else {
+        window.location.replace("/index.html");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="/myorders.html">My Orders</a>...</p>
+</body>
+</html>
