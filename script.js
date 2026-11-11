@@ -129,8 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const escapePotWrapper = document.getElementById('escapePotWrapper');
   const stageProduct1 = document.getElementById('stageProduct1');
   const stageProduct2 = document.getElementById('stageProduct2');
-  let hasEscaped = false;
-  let hasWonReward = false;
+
+  // Pot escape game appears ONLY ONCE per device (first visit only)
+  const POT_DEVICE_SEEN_KEY = 'alifeo_pot_escape_seen_device';
+  const hasAlreadySeenPotGame = localStorage.getItem(POT_DEVICE_SEEN_KEY) === 'true';
+
+  let hasEscaped = hasAlreadySeenPotGame;
+  let hasWonReward = hasAlreadySeenPotGame;
   
   window.addEventListener('scroll', () => {
     // Ribbon 1 parallax calculation: driven by stageProduct1 visibility
@@ -145,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         inhouseRibbon1.style.transform = `translateX(-${progress1 * 50}%)`;
 
         // When ribbon has moved ~70% (progress >= 0.70) and hasn't escaped yet:
-        if (progress1 >= 0.70 && !hasEscaped && !hasWonReward && escapePotWrapper) {
+        // Appears ONLY ONCE per device. After that, pot stays permanently in frame.
+        if (progress1 >= 0.70 && !hasEscaped && !hasWonReward && !hasAlreadySeenPotGame && escapePotWrapper) {
           triggerPotEscape();
         }
       }
@@ -173,8 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function triggerPotEscape() {
-    if (hasEscaped || hasWonReward) return;
+    if (hasEscaped || hasWonReward || localStorage.getItem(POT_DEVICE_SEEN_KEY) === 'true') return;
     hasEscaped = true;
+    // Mark as played on this device immediately so it never triggers again
+    localStorage.setItem(POT_DEVICE_SEEN_KEY, 'true');
     canCatch = false; // Alternating cycle starts: 1st touch will dodge/jump far away!
     escapePotWrapper.classList.add('floating-escaped');
     
@@ -457,12 +465,17 @@ document.addEventListener('DOMContentLoaded', () => {
 const winRewardModal = document.getElementById('winRewardModal');
 
 function openRewardModal() {
+  if (localStorage.getItem('alifeo_pot_reward_shown') === 'true') return;
+  localStorage.setItem('alifeo_pot_reward_shown', 'true');
+  localStorage.setItem('alifeo_pot_escape_seen_device', 'true');
   if (winRewardModal) {
     winRewardModal.classList.add('active');
   }
 }
 
 function closeRewardModal() {
+  localStorage.setItem('alifeo_pot_reward_shown', 'true');
+  localStorage.setItem('alifeo_pot_escape_seen_device', 'true');
   if (winRewardModal) {
     winRewardModal.classList.remove('active');
   }

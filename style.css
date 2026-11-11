@@ -2762,3 +2762,27 @@ body {
   display: flex;
   justify-content: center;
 }
+
+/* Instagram plain text styling (no click / no link opening) */
+.contact-text-plain {
+  color: var(--text-main);
+  font-weight: 500;
+  user-select: text;
+}
+
+.channel-card.as-text-card,
+.channel-chip.as-text-chip,
+.btn-giveaway-insta.as-text-btn {
+  cursor: default !important;
+  text-decoration: none !important;
+  pointer-events: auto;
+  user-select: text;
+}
+
+.channel-card.as-text-card:hover,
+.channel-chip.as-text-chip:hover,
+.btn-giveaway-insta.as-text-btn:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: var(--border-subtle) !important;
+}
