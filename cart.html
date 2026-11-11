@@ -30,7 +30,22 @@
       <a href="index.html" class="brand-logo-link" aria-label="Alifeo">
         <img src="logo.svg" alt="Alifeo Logo" class="alifeo-svg-logo" />
       </a>
+
       <div class="nav-right-actions">
+        <!-- Desktop Only Account & Cart Icons (Hidden on Mobile) -->
+        <a href="myorders.html" class="desktop-nav-icon-btn" title="My Orders &amp; Account">
+          <i class="fa-regular fa-user"></i>
+          <span>Account</span>
+        </a>
+
+        <a href="cart.html" class="desktop-nav-icon-btn desktop-cart-btn" title="Shopping Cart">
+          <div class="desktop-cart-icon-wrapper">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count-badge" id="navCartCount">0</span>
+          </div>
+          <span>Cart</span>
+        </a>
+
         <a href="index.html" class="btn-header-join">
           Explore App
         </a>

@@ -37,6 +37,20 @@
       </a>
 
       <div class="nav-right-actions">
+        <!-- Desktop Only Account & Cart Icons (Hidden on Mobile) -->
+        <a href="myorders.html" class="desktop-nav-icon-btn" title="My Orders &amp; Account">
+          <i class="fa-regular fa-user"></i>
+          <span>Account</span>
+        </a>
+
+        <a href="cart.html" class="desktop-nav-icon-btn desktop-cart-btn" title="Shopping Cart">
+          <div class="desktop-cart-icon-wrapper">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count-badge" id="navCartCount">0</span>
+          </div>
+          <span>Cart</span>
+        </a>
+
         <button class="btn-header-join" onclick="openWaitlistModal('general')">
           Join Waitlist
         </button>
@@ -70,7 +84,7 @@
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
 
-              <span class="ribbon-text-strong">USE CODE</span>
+              <span class="ribbon-text-strong">GET ₹100 OFF ON YOUR</span>
               <div class="dashed-code-badge" id="promoCodeVal">FIRSTORDER</div>
             </div>
 
@@ -223,19 +237,19 @@
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1110.png" alt="Kitchen & Home" loading="lazy" />
-              </div>
-              <span class="pure-cat-name">Kitchen</span>
-            </div>
-            <div class="pure-cat-item">
-              <div class="pure-cat-thumb">
-                <img src="categories/Frame 1116 (1).png" alt="Book Stationery & Office" loading="lazy" />
+                <img src="categories/Frame 1110.png" alt="Book Stationery &amp; Office" loading="lazy" />
               </div>
               <span class="pure-cat-name">Stationery</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1116.png" alt="Industrial Hardware" loading="lazy" />
+                <img src="categories/Frame 1116 (1).png" alt="Pet Supplies &amp; Animal Care" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Pet Care</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1116.png" alt="Industrial Tools &amp; Hardware" loading="lazy" />
               </div>
               <span class="pure-cat-name">Hardware</span>
             </div>
@@ -245,57 +259,57 @@
           <div class="cat-track-row">
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/cat-grocery.png" alt="Daily Use & Grocery" loading="lazy" />
+                <img src="categories/cat-grocery.png" alt="Daily Use &amp; Grocery" loading="lazy" />
               </div>
               <span class="pure-cat-name">Grocery</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1117.png" alt="Pet Supplies" loading="lazy" />
-              </div>
-              <span class="pure-cat-name">Pet Care</span>
-            </div>
-            <div class="pure-cat-item">
-              <div class="pure-cat-thumb">
-                <img src="categories/Frame 1118.png" alt="Garden & Agriculture" loading="lazy" />
+                <img src="categories/Frame 1117.png" alt="Garden Plants &amp; Agriculture" loading="lazy" />
               </div>
               <span class="pure-cat-name">Garden</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1119 (1).png" alt="Luggage & Travel Bags" loading="lazy" />
+                <img src="categories/Frame 1118.png" alt="Luggage Bags &amp; Travel" loading="lazy" />
               </div>
               <span class="pure-cat-name">Luggage</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1119.png" alt="Travel Bags" loading="lazy" />
-              </div>
-              <span class="pure-cat-name">Travel Bags</span>
-            </div>
-            <div class="pure-cat-item">
-              <div class="pure-cat-thumb">
-                <img src="categories/Frame 1120 (1).png" alt="Jewellery & Watches" loading="lazy" />
+                <img src="categories/Frame 1119 (1).png" alt="Jewellery &amp; Luxury" loading="lazy" />
               </div>
               <span class="pure-cat-name">Jewellery</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1120.png" alt="Watches & Luxury" loading="lazy" />
+                <img src="categories/Frame 1119.png" alt="Watches &amp; Luxury" loading="lazy" />
               </div>
               <span class="pure-cat-name">Watches</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1121.png" alt="Gifts & Party" loading="lazy" />
+                <img src="categories/Frame 1120 (1).png" alt="Gifts &amp; Hampers" loading="lazy" />
               </div>
               <span class="pure-cat-name">Gifts</span>
             </div>
             <div class="pure-cat-item">
               <div class="pure-cat-thumb">
-                <img src="categories/Frame 1122.png" alt="Festivals & Supplies" loading="lazy" />
+                <img src="categories/Frame 1120.png" alt="Festivals &amp; Party Supplies" loading="lazy" />
               </div>
               <span class="pure-cat-name">Festivals</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1121.png" alt="Audio &amp; Mic Equipment" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Audio</span>
+            </div>
+            <div class="pure-cat-item">
+              <div class="pure-cat-thumb">
+                <img src="categories/Frame 1122.png" alt="Footwear &amp; Shoes" loading="lazy" />
+              </div>
+              <span class="pure-cat-name">Footwear</span>
             </div>
           </div>
         </div>
@@ -544,7 +558,7 @@
       <button class="modal-close-icon" onclick="closeGameModal()">&times;</button>
 
       <div class="game-header">
-        <span class="game-pill">ALIFEO MINI BREAK</span>
+        <span class="game-pill">ALIFEO MINI BREAK UNDER DEVELOPMENT</span>
         <h3>Play X / O Game</h3>
         <p id="gameStatusText">Your turn: <strong>Player (X)</strong></p>
       </div>
@@ -559,7 +573,7 @@
           <span class="sc-val" id="scoreTies">0</span>
         </div>
         <div class="score-card player-o-card">
-          <span class="sc-label">AI Bot (O)</span>
+          <span class="sc-label">Alifeo AI(O)</span>
           <span class="sc-val" id="scoreO">0</span>
         </div>
       </div>
@@ -780,7 +794,8 @@
             <div class="giveaway-step-item">
               <span class="step-num">3</span>
               <p>Take screenshots of the downloads &amp; story, and send them to us on Instagram DM
-                <strong>@alifeoapp</strong>!</p>
+                <strong>@alifeoapp</strong>!
+              </p>
             </div>
           </div>
 

@@ -147,6 +147,11 @@ body {
   gap: 10px;
 }
 
+/* Desktop-only navbar elements (strictly hidden on mobile) */
+.desktop-nav-icon-btn {
+  display: none !important;
+}
+
 .nav-icon-link {
   color: var(--text-main);
   font-size: 1.05rem;
@@ -2785,4 +2790,287 @@ body {
   transform: none !important;
   box-shadow: none !important;
   border-color: var(--border-subtle) !important;
+}
+
+/* ==========================================================================
+   DESKTOP RESPONSIVE ENHANCEMENTS (>= 768px)
+   Leaves Mobile UI 100% Unchanged while expanding gracefully on Laptop / Desktop
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* Main Containers */
+  .container,
+  .hero-container {
+    max-width: 1080px !important;
+    padding: 0 28px !important;
+  }
+
+  .nav-container {
+    max-width: 1080px !important;
+    padding: 0 28px !important;
+  }
+
+  .clean-navbar {
+    padding: 16px 0 14px;
+  }
+
+  .alifeo-svg-logo {
+    height: 48px;
+  }
+
+  .btn-header-join {
+    padding: 8px 18px;
+    font-size: 0.88rem;
+  }
+
+  /* Desktop Navbar: Account/Cart Icons */
+  .nav-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .desktop-nav-icon-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    border: 1px solid transparent;
+  }
+
+  .desktop-nav-icon-btn:hover {
+    background: var(--bg-soft);
+    border-color: var(--border-subtle);
+    color: var(--alifeo-green);
+  }
+
+  .desktop-nav-icon-btn i {
+    font-size: 1.05rem;
+    color: var(--alifeo-green);
+  }
+
+  .desktop-cart-icon-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .cart-count-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* Ribbon Voucher */
+  .hero-ribbon-row {
+    max-width: 760px !important;
+    margin: 0 auto 18px !important;
+  }
+
+  .ticket-ribbon-body {
+    height: 40px;
+    padding: 0 18px;
+    font-size: 0.84rem;
+  }
+
+  /* Search Bar */
+  .hero-search-row {
+    max-width: 680px;
+    margin: 0 auto 20px;
+  }
+
+  .animated-search-bar {
+    height: 52px;
+    padding: 0 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Ticket Carousel Banner */
+  .hero-ticket-carousel-row {
+    max-width: 880px;
+    margin: 0 auto 24px;
+  }
+
+  .dark-green-ticket-card {
+    padding: 28px 36px;
+    border-radius: 20px;
+  }
+
+  .ticket-card-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .ticket-card-desc {
+    font-size: 0.95rem;
+    max-width: 620px;
+    margin-bottom: 16px;
+  }
+
+  /* Categories Row (Centered & Hide Swipe on Desktop) */
+  .hero-categories-row {
+    max-width: 1080px !important;
+    margin: 0 auto 28px !important;
+  }
+
+  .categories-header-mini {
+    font-size: 0.78rem;
+    padding: 0 8px 14px;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  /* Hide 'Swipe ->' on desktop */
+  .categories-header-mini small {
+    display: none !important;
+  }
+
+  .categories-scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .cat-track-row {
+    display: flex;
+    justify-content: center !important;
+    margin: 0 auto;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .pure-cat-item {
+    width: 86px;
+    min-width: 86px;
+  }
+
+  .pure-cat-thumb {
+    width: 68px;
+    height: 68px;
+  }
+
+  /* Button Stack ("Want to Know More") */
+  .compact-btn-stack {
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+
+  /* In-House Product Showcase (2 Columns side-by-side on Desktop) */
+  .inhouse-product-section {
+    max-width: 1080px !important;
+    margin: 28px auto 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+    align-items: stretch;
+  }
+
+  .inhouse-showcase-card {
+    padding: 20px 18px 20px;
+    height: 100%;
+  }
+
+  .inhouse-visual-stage {
+    height: 260px;
+  }
+
+  .inhouse-pot-artwork {
+    height: 200px;
+  }
+
+  .inhouse-product-title {
+    font-size: 1.15rem;
+  }
+
+  .inhouse-product-desc {
+    font-size: 0.88rem;
+  }
+
+  /* Revealed Vision / Ecosystem Section */
+  .revealed-details-section .details-card-box {
+    max-width: 1080px !important;
+    padding: 36px 32px;
+  }
+
+  .details-header-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .ecosystem-cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .feature-item-card {
+    padding: 20px;
+  }
+
+  .feature-item-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .feature-item-card p {
+    font-size: 0.84rem;
+  }
+
+  /* Footer (3 Columns on Desktop) */
+  .footer-container-outer {
+    max-width: 1080px !important;
+  }
+
+  .folder-tab-card-wrapper {
+    max-width: 1080px !important;
+  }
+
+  .folder-card-content {
+    display: grid !important;
+    grid-template-columns: 1.6fr 1fr 1.2fr !important;
+    gap: 36px !important;
+    padding: 36px 36px 20px !important;
+    align-items: start;
+  }
+
+  .folder-card-content .footer-brand-col {
+    margin-bottom: 0;
+  }
+
+  .folder-card-content .footer-links-col {
+    margin-bottom: 0;
+  }
+
+  .folder-card-content .footer-contact-col {
+    margin-bottom: 0;
+  }
+
+  .folder-bottom-copyright {
+    grid-column: 1 / -1 !important;
+    margin-top: 16px;
+  }
+
+  /* Subpages: Search / Cart / Orders */
+  .app-subpage-container {
+    max-width: 900px !important;
+  }
+
+  .search-catalog-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+  }
 }
