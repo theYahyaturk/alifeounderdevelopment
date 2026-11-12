@@ -243,7 +243,6 @@ body {
   margin: 0 auto 12px;
   display: flex;
   justify-content: center;
-  overflow: hidden;
 }
 
 .ticket-ribbon-wrapper {
@@ -252,7 +251,6 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  overflow: hidden;
 }
 
 .ticket-ribbon-body {
@@ -262,10 +260,10 @@ body {
   justify-content: space-between;
   background-color: #075c37;
   color: #ffffff;
-  height: 36px;
-  padding: 0 14px;
+  height: 32px;
+  padding: 0 10px;
   box-shadow: 0 2px 5px rgba(7, 92, 55, 0.12);
-  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 50%, 100% 100%, 10px 100%, 0% 50%);
+  clip-path: polygon(7px 0%, 100% 0%, calc(100% - 7px) 50%, 100% 100%, 7px 100%, 0% 50%);
   user-select: none;
   max-width: 100%;
   box-sizing: border-box;
@@ -274,18 +272,19 @@ body {
 .ribbon-left-items {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 4px;
   font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
+  font-size: 0.63rem;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
 }
 
 .gift-icon-svg {
-  width: 17px;
-  height: 17px;
+  width: 13px;
+  height: 13px;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .gift-icon-svg svg {
   width: 100%;
@@ -293,11 +292,11 @@ body {
 }
 
 .gold-chevrons {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   color: var(--gold-accent);
-  font-size: 0.52rem;
+  font-size: 0.45rem;
   line-height: 0.65;
 }
 
@@ -307,53 +306,54 @@ body {
 }
 
 .dashed-code-badge {
-  border: 1.2px dashed rgba(255, 255, 255, 0.95);
+  border: 1px dashed rgba(255, 255, 255, 0.95);
   background: rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  padding: 1px 5px;
+  border-radius: 3px;
+  padding: 1px 4px;
   font-family: monospace;
   font-weight: 800;
-  font-size: 0.76rem;
-  letter-spacing: 0.05em;
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .ticket-punches {
   position: relative;
   height: 100%;
-  width: 14px;
-  margin: 0 5px;
+  width: 10px;
+  margin: 0 3px;
   flex-shrink: 0;
 }
 .punch-top, .punch-bottom {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-color: var(--bg-page);
   border-radius: 50%;
 }
-.punch-top { top: -5px; }
-.punch-bottom { bottom: -5px; }
+.punch-top { top: -4px; }
+.punch-bottom { bottom: -4px; }
 
 .ribbon-right-items {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .btn-copy-ticket {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   background: #ffffff;
   color: #075c37;
   border: none;
   font-family: inherit;
   font-weight: 700;
-  font-size: 0.68rem;
-  padding: 3px 9px;
+  font-size: 0.62rem;
+  padding: 2.5px 7px;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: var(--transition);
@@ -365,7 +365,7 @@ body {
 
 .ribbon-divider {
   width: 1px;
-  height: 14px;
+  height: 12px;
   background: rgba(255, 255, 255, 0.35);
 }
 
@@ -373,9 +373,9 @@ body {
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   cursor: pointer;
-  padding: 2px;
+  padding: 1px;
   line-height: 1;
 }
 
@@ -2895,6 +2895,57 @@ body {
     height: 40px;
     padding: 0 18px;
     font-size: 0.84rem;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 50%, 100% 100%, 10px 100%, 0% 50%);
+  }
+
+  .ribbon-left-items {
+    gap: 7px;
+    font-size: 0.74rem;
+  }
+
+  .gift-icon-svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gold-chevrons {
+    display: flex;
+    font-size: 0.52rem;
+  }
+
+  .dashed-code-badge {
+    font-size: 0.78rem;
+    padding: 1px 5px;
+  }
+
+  .ticket-punches {
+    width: 14px;
+    margin: 0 5px;
+  }
+
+  .punch-top, .punch-bottom {
+    width: 10px;
+    height: 10px;
+  }
+  .punch-top { top: -5px; }
+  .punch-bottom { bottom: -5px; }
+
+  .ribbon-right-items {
+    gap: 6px;
+  }
+
+  .btn-copy-ticket {
+    font-size: 0.68rem;
+    padding: 3px 9px;
+    gap: 4px;
+  }
+
+  .ribbon-divider {
+    height: 14px;
+  }
+
+  .btn-dismiss-ticket {
+    font-size: 0.88rem;
   }
 
   /* Search Bar */
