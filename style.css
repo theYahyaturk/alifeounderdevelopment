@@ -2365,6 +2365,119 @@ body {
 }
 
 /* ==========================================================================
+   PRIVACY POLICY PAGE (Google Play Store & DPDP Act Compliant)
+   ========================================================================== */
+.privacy-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.privacy-header-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.privacy-header-card h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+.privacy-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--alifeo-green-light);
+  color: var(--alifeo-green);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 10px;
+}
+.privacy-header-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.privacy-section-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px 20px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.privacy-section-card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.privacy-section-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 12px 0 6px;
+}
+.privacy-section-card p {
+  font-size: 0.8rem;
+  color: #374151;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.privacy-section-card p:last-child {
+  margin-bottom: 0;
+}
+.privacy-section-card ul {
+  padding-left: 20px;
+  margin: 8px 0 12px;
+}
+.privacy-section-card ul li {
+  font-size: 0.79rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.privacy-highlight-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin: 12px 0;
+}
+.privacy-highlight-box strong {
+  display: block;
+  font-size: 0.84rem;
+  color: #166534;
+  margin-bottom: 3px;
+}
+.privacy-highlight-box p {
+  font-size: 0.77rem;
+  color: #15803d;
+  margin: 0;
+  line-height: 1.45;
+}
+.privacy-link {
+  color: var(--alifeo-green);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.privacy-link:hover {
+  color: var(--alifeo-green-hover);
+}
+
+/* ==========================================================================
    4. TIC-TAC-TOE (X / O) GAME MODAL
    ========================================================================== */
 .game-modal-backdrop {
@@ -3507,10 +3620,11 @@ body {
     margin-top: 16px;
   }
 
-  /* Subpages: Search / Cart / Orders / Delete Account */
+  /* Subpages: Search / Cart / Orders / Delete Account / Privacy Policy */
   .app-subpage-container,
-  .delete-page-container {
-    max-width: 720px !important;
+  .delete-page-container,
+  .privacy-page-container {
+    max-width: 780px !important;
   }
 
   .subpage-header-btn {

@@ -6,7 +6,9 @@
   <script>
     (function() {
       var p = window.location.pathname.replace(/\/+$/, "");
-      if (p.endsWith("/my-account/wpf-delete-account") || p === "/my-account/wpf-delete-account" || p.endsWith("/wpf-delete-account") || p.endsWith("/delete-account") || p === "/delete-account") {
+      if (p.endsWith("/privacy-policy") || p === "/privacy-policy" || p.endsWith("/privacy") || p === "/privacy") {
+        window.location.replace("/privacy-policy/");
+      } else if (p.endsWith("/my-account/wpf-delete-account") || p === "/my-account/wpf-delete-account" || p.endsWith("/wpf-delete-account") || p.endsWith("/delete-account") || p === "/delete-account") {
         window.location.replace("/my-account/wpf-delete-account/");
       } else if (p.endsWith("/my-account/orders") || p === "/my-account/orders") {
         window.location.replace("/myorders.html");
